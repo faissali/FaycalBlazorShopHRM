@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="FaycalBlazorShopHRM.Shared\FaycalBlazorShopHRM.Shared.csproj" />
+    <ProjectReference Include="..\FaycalBlazorShopHRM.Shared\FaycalBlazorShopHRM.Shared.csproj" />
   </ItemGroup>
 
 </Project>
