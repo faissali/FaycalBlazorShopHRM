@@ -7,3 +7,8 @@
 <h3> 
     Welcome to your new app <span class="random-text"> </span>
 </h3>
+
+@foreach(var widget in Widgets)
+{
+    <DynamicComponent Type="widget"></DynamicComponent>
+}
