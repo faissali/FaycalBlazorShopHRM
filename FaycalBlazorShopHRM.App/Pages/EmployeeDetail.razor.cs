@@ -1,4 +1,4 @@
-﻿using BethanysPieShopHRM.Shared.Domain;
+﻿using FaycalBlazorShopHRM.Shared.Domain;
 using FaycalBlazorShopHRM.App.Models;
 using Microsoft.AspNetCore.Components;
 
