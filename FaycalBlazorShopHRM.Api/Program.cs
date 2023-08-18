@@ -30,6 +30,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 
+// for asp core hosted blazor
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
@@ -44,6 +45,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// for asp core hosted blazor
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
@@ -55,6 +57,7 @@ app.UseCors("Open");
 
 app.MapControllers();
 
+// for asp core hosted blazor
 app.MapFallbackToFile("index.html");
 
 app.Run();
