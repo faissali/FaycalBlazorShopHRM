@@ -7,9 +7,13 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
+// Add http client factory
 builder.Services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(
     client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
 );
+
+// Add state management
+builder.Services.AddScoped<ApplicationState>();
 
 
 await builder.Build().RunAsync();
