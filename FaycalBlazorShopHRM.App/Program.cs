@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using FaycalBlazorShopHRM.App;
 using FaycalBlazorShopHRM.App.Services;
 using Microsoft.AspNetCore.Components.Web;
@@ -15,5 +16,7 @@ builder.Services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(
 // Add state management
 builder.Services.AddScoped<ApplicationState>();
 
+// Add support for local storage
+builder.Services.AddBlazoredLocalStorage();
 
 await builder.Build().RunAsync();

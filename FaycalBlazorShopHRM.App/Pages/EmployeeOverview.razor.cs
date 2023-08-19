@@ -17,7 +17,7 @@ public partial class EmployeeOverview
     private string Title = "Employee Overview";
     protected override async Task OnInitializedAsync()
     {
-        Employees = (await EmployeeDataService!.GetAllEmployees())?.ToList();
+        Employees = (await EmployeeDataService!.GetAllEmployees(false))?.ToList();
     }
 
     public void ShowQuickViewEmployee(Employee selectedEmployee)
