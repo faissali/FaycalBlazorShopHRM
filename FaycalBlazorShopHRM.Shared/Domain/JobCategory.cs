@@ -1,4 +1,4 @@
-﻿namespace BethanysPieShopHRM.Shared.Domain
+﻿namespace FaycalBlazorShopHRM.Shared.Domain
 {
     public class JobCategory
     {

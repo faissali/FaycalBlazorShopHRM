@@ -1,4 +1,4 @@
-﻿using BethanysPieShopHRM.Shared.Domain;
+﻿using FaycalBlazorShopHRM.Shared.Domain;
 
 namespace FaycalBlazorShopHRM.App.Models;
 
@@ -33,7 +33,7 @@ public class MockDataService
             MaritalStatus = MaritalStatus.Single,
             BirthDate = new DateTime(1989, 3, 11),
             City = "Brussels",
-            Email = "bethany@bethanyspieshop.com",
+            Email = "bethany@FaycalBlazorshop.com",
             EmployeeId = 1,
             FirstName = "Bethany",
             LastName = "Smith",
@@ -56,7 +56,7 @@ public class MockDataService
             MaritalStatus = MaritalStatus.Married,
             BirthDate = new DateTime(1979, 1, 16),
             City = "Antwerp",
-            Email = "gill@bethanyspieshop.com",
+            Email = "gill@FaycalBlazorshop.com",
             EmployeeId = 2,
             FirstName = "Gill",
             LastName = "Cleeren",
@@ -79,7 +79,7 @@ public class MockDataService
             MaritalStatus = MaritalStatus.Married,
             BirthDate = new DateTime(1979, 1, 16),
             City = "Agadir",
-            Email = "faycal@bethanyspieshop.com",
+            Email = "faycal@FaycalBlazorshop.com",
             EmployeeId = 3,
             FirstName = "Gill",
             LastName = string.Empty,
