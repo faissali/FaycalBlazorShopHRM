@@ -1,5 +1,6 @@
 ﻿using FaycalBlazorShopHRM.Api.Models;
 using FaycalBlazorShopHRM.Shared.Domain;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FaycalBlazorShopHRM.Api.Controllers
@@ -9,13 +10,13 @@ namespace FaycalBlazorShopHRM.Api.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
-        //private readonly IWebHostEnvironment _webHostEnvironment;
-        //private readonly IHttpContextAccessor _httpContextAccessor;
-        public EmployeeController(IEmployeeRepository employeeRepository)//, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public EmployeeController(IEmployeeRepository employeeRepository, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
             _employeeRepository = employeeRepository;
-            //_webHostEnvironment = webHostEnvironment;
-            //_httpContextAccessor = httpContextAccessor;
+            _webHostEnvironment = webHostEnvironment;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpGet]
@@ -45,13 +46,13 @@ namespace FaycalBlazorShopHRM.Api.Controllers
                 return BadRequest(ModelState);
 
             //handle image upload
-            //string currentUrl = _httpContextAccessor.HttpContext.Request.Host.Value;
-            //var path = $"{_webHostEnvironment.WebRootPath}\\uploads\\{employee.ImageName}";
-            //var fileStream = System.IO.File.Create(path);
-            //fileStream.Write(employee.ImageContent, 0, employee.ImageContent.Length);
-            //fileStream.Close();
+            string currentUrl = _httpContextAccessor.HttpContext.Request.Host.Value;
+            var path = $"{_webHostEnvironment.WebRootPath}\\uploads\\{employee.ImageName}";
+            var fileStream = System.IO.File.Create(path);
+            fileStream.Write(employee.ImageContent, 0, employee.ImageContent.Length);
+            fileStream.Close();
 
-           // employee.ImageName = $"https://{currentUrl}/uploads/{employee.ImageName}";
+            employee.ImageName = $"https://{currentUrl}/uploads/{employee.ImageName}";
 
             var createdEmployee = _employeeRepository.AddEmployee(employee);
 
