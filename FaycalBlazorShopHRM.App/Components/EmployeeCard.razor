@@ -6,7 +6,9 @@
         </div>
         <div class="card-body employee-card text-center">
             <div class="mb-3">
-                <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Employee.EmployeeId}.jpg")" class="img-fluid rounded-circle employee-detail-img" />
+                @*                <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Employee.EmployeeId}.jpg")" class="img-fluid rounded-circle employee-detail-img" />
+                *@
+                <img src="@Employee.ImageName" class="img-fluid rounded-circle employee-detail-img" />
             </div>
             <button class="btn btn-primary btn-sm mb-1" @onclick="@(async() => await EmployeeQuickViewClicked.InvokeAsync(Employee))">
                 Quick view
